@@ -11,7 +11,7 @@ final class IsCyclic {
 		SingleLLNode n2 = new SingleLLNode(2, null);
 		SingleLLNode n3 = new SingleLLNode(4, null);
 		SingleLLNode n4 = new SingleLLNode(6, null);
-		SingleLLNode n5 = new SingleLLNode(2, null);
+		SingleLLNode n5 = new SingleLLNode(12, null);
 
 		n5.setNext(n3);
 		n4.setNext(n5);
@@ -31,6 +31,7 @@ final class IsCyclic {
 		SingleLLNode h1 = head, h2 = head;
 		if (head.getNext() != null && head.getNext().getNext() != null) {
 			h1 = head.getNext().getNext();
+			h2 = h2.getNext();
 		} else {
 			return isCyclic;
 		}
@@ -43,6 +44,8 @@ final class IsCyclic {
 				h2 = h2.getNext();
 			}
 		}
+		System.out.println(h1.getValue());
+		System.out.println(h2.getValue());
 		return isCyclic;
 	}
 }
